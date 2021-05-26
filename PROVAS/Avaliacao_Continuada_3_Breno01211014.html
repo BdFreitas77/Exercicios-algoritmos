@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+    <!-- 
+        1. (03 pontos) Tenha um botão “JoKenPo” que quando clicado:
+
+        a. sorteie as 2 “mãos” ao mesmo tempo;
+
+        b. mostre as figuras sorteadas, primeiro do Jogador 1 e depois o Jogador 2;
+
+        c. abaixo da figura mostre o resultado da rodada, conforme exemplos abaixo
+     -->
+    <h1>PEDRA, PAPEL E TESOURA !</h1>
+    <br><br>
+    <button onclick="gerar()">JoKenPo</button>
+    <br><br><br>
+    <div id="imagens">
+        <img id="papel1" style="display: none;" src="jkp_papel.png" alt="">
+        <img id="pedra1" style="display: none;" src="jkp_pedra.jpg" alt="">
+        <img id="tesoura1" style="display: none;" src="jkp_tesoura.png" alt="">
+        <img id="papel2" style="display: none;" src="jkp_papel.png" alt="">
+        <img id="pedra2" style="display: none;" src="jkp_pedra.jpg" alt="">
+        <img id="tesoura2" style="display: none;" src="jkp_tesoura.png" alt="">
+    </div>
+    <br><br>
+    <div id="msg"></div>
+    <br><br>
+    <div id="inputs" style="display: none;">
+        de <input id="inp_de" type="text">
+        até <input type="text" id="inp_ate">
+        <button onclick="intervalo()">Intervalo</button>
+    </div>
+    <br><br>
+    <div id="msg_intervalo"></div>
+</body>
+
+</html>
+<script>
+    var resultado = '';
+    var rodada = 0;
+    var inf_rodada = [];
+    var vencedor = '';
+    var fig1 = '';
+    var fig2 = '';
+
+    function gerar() {
+        var aleatorio1 = parseInt(Math.random() * 3 + 1)
+        var aleatorio2 = parseInt(Math.random() * 3 + 1)
+        rodada++;
+        inputs.style.display = 'block';
+
+        if (aleatorio1 == 1) {
+            papel1.style.display = 'inline-block'
+            pedra1.style.display = 'none'
+            tesoura1.style.display = 'none'
+        } else if (aleatorio1 == 2) {
+            papel1.style.display = 'none'
+            pedra1.style.display = 'inline-block'
+            tesoura1.style.display = 'none'
+        } else if (aleatorio1 == 3) {
+            papel1.style.display = 'none'
+            pedra1.style.display = 'none'
+            tesoura1.style.display = 'inline-block'
+        }
+
+        if (aleatorio2 == 1) {
+            papel2.style.display = 'inline-block'
+            pedra2.style.display = 'none'
+            tesoura2.style.display = 'none'
+        } else if (aleatorio2 == 2) {
+            papel2.style.display = 'none'
+            pedra2.style.display = 'inline-block'
+            tesoura2.style.display = 'none'
+        } else if (aleatorio2 == 3) {
+            papel2.style.display = 'none'
+            pedra2.style.display = 'none'
+            tesoura2.style.display = 'inline-block'
+        }
+
+        if (aleatorio1 == aleatorio2) {
+            resultado = 'Empate.';
+            vencedor = 'Empate';
+            if (aleatorio1 == 1) {
+                fig1 = 'Papel';
+                fig2 = 'Papel';
+            } else if (aleatorio1 == 2) {
+                fig1 = 'Pedra';
+                fig2 = 'Pedra';
+            } else if (aleatorio1 == 3) {
+                fig1 = 'Tesoura';
+                fig2 = 'Tesoura';
+            }
+        } else if (aleatorio1 == 1 && aleatorio2 == 2) {
+            resultado = 'Jogador 1 vence porque Papel cobre a Pedra.'
+            vencedor = 'Jogador 1 ganhou';
+            fig1 = 'Papel';
+            fig2 = 'Pedra';
+        } else if (aleatorio1 == 1 && aleatorio2 == 3) {
+            resultado = 'Jogador 2 vence porque Tesoura corta Papel.'
+            vencedor = 'Jogador 2 ganhou';
+            fig1 = 'Papel';
+            fig2 = 'Tesoura';
+        } else if (aleatorio1 == 2 && aleatorio2 == 1) {
+            resultado = 'Jogador 2 vence porque Papel cobre a Pedra.'
+            vencedor = 'Jogador 2 ganhou';
+            fig1 = 'Pedra';
+            fig2 = 'Papel';
+        } else if (aleatorio1 == 2 && aleatorio2 == 3) {
+            resultado = 'Jogador 1 vence porque Pedra quebra a Tesoura.'
+            vencedor = 'Jogador 1 ganhou';
+            fig1 = 'Pedra';
+            fig2 = 'Tesoura';
+        } else if (aleatorio1 == 3 && aleatorio2 == 1) {
+            resultado = 'Jogador 1 vence porque Tesoura corta papel.'
+            vencedor = 'Jogador 1 ganhou';
+            fig1 = 'Tesoura';
+            fig2 = 'Papel';
+        } else if (aleatorio1 == 3 && aleatorio2 == 2) {
+            resultado = 'Jogador 2 vence porque Pedra quebra a Tesoura.'
+            vencedor = 'Jogador 2 ganhou';
+            fig1 = 'Tesoura';
+            fig2 = 'Pedra';
+        }
+
+        msg.innerHTML = `Resultado = <b>${resultado}</b>`
+        inf_rodada.push(`rodada ${rodada} - ${fig1} X ${fig2} - ${vencedor}.`)
+
+    }
+
+
+    function intervalo() {
+        var de = Number(inp_de.value);
+        var ate = Number(inp_ate.value);
+        if (de > 0 && ate <= rodada && de <= ate) {
+            msg_intervalo.innerHTML = '';
+            while (de <= ate) {
+                msg_intervalo.innerHTML += `${inf_rodada[de - 1]} <br><br>`;
+                de++
+            }
+        } else {
+            alert('Campos inválidos!')
+        }
+    }
+</script>
