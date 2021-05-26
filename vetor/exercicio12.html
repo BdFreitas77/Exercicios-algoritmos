@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+    <input type="text" id="produto" placeholder="Nome do produto">
+    <input type="text" id="preco" placeholder="Preço de compra">
+    <br><br>
+    <button onclick="cadastrar()">CADASTRAR</button>
+    <button onclick="mostrar_relatorio()">RELATÓRIO DE ESTOQUE</button>
+    <br><br>
+    <div id="msg"></div><br><br>
+    <div id="msg2"></div>
+</body>
+
+</html>
+<script>
+    var produtos = [];
+    var precos = [];
+    var qtd = 0;
+    var contador = 0;
+    var mais_caro = 0;
+    var mais_barato = 0;
+    var soma = Number(0);
+    
+    function cadastrar() {
+        produtos.push(produto.value)
+        precos.push(preco.value)
+        qtd++;
+        soma = soma + Number(preco.value);
+        mais_caro = precos[0];
+        mais_barato = precos[0];
+    }
+
+    function mostrar_relatorio() {
+        contador = 0;
+        while (contador < produtos.length) {
+            if (precos[contador] > mais_caro) {
+                mais_caro = produtos[contador]
+            } 
+            contador ++
+        }
+
+        contador = 0;
+        
+        while (contador < produtos.length) {
+            if (precos[contador] < mais_barato) {
+                mais_barato = produtos[contador]
+            } 
+            contador ++
+        }
+        contador = 0;
+        msg.innerHTML = `Total de produtos: ${qtd} <br><br><br>`
+        while (contador < produtos.length) {
+            msg.innerHTML += `
+
+            Produto ${contador + 1}: ${produtos[contador]} <br><br>
+    
+            Preço de compra: R$${precos[contador]}. Vender por R$${precos[contador] * 1.25} <br><br><br>
+
+            `;
+            contador++
+        }
+        msg2.innerHTML = `
+        
+        O nome do produto mais caro: ${mais_caro} <br><br>
+
+        O nome do produto mais barato: ${mais_barato} <br><br>
+
+        A soma dos preços de compra dos produtos: ${Number(soma) * 1.25} <br><br>
+
+        A média de preço de venda dos produtos: ${(Number(soma) * 1.25) / Number(precos.length)}
+        
+        `;
+
+        // O preço de venda é sempre o valor da compra mais 25%. Ou seja, basta multiplicar o preço de compra por 1,25.
+    }
+
+</script>
+<!-- 
+12. Crie um pequeno sistema de loja eletrônica o qual:
+
+a) Tenha um campo "Nome do produto" e outro "Preço de compra"
+
+b) Tenha um botão "Cadastrar". Ao clicar nele, o nome e preço ficam cadastrados em algum lugar, por enquanto invisível ao usuário
+
+c) Tenha um botão "Relatório de estoque". Ao clicar nele, deve aparecer uma listagem dos produtos cadastrados com seu valor para venda, como no exemplo a seguir:
+
+   Total de produtos: 2
+
+   Produto 1: Leite de arroz
+
+   Preço de compra: R$1.50. Vender por R$1,87
+
+ 
+
+   Produto 2: Caixa de chocolates
+
+   Preço de compra: R$9.00. Vender por R$11,25
+
+ 
+
+O preço de venda é sempre o valor da compra mais 25%. Ou seja, basta multiplicar o preço de compra por 1,25.
+
+d) Ao final do relatório exibir:
+
+   O nome do produto mais caro
+
+   O nome do produto mais barato
+
+   A soma dos preços de compra dos produtos
+
+   A média de preço de venda dos produtos
+
+ 
+
+#FicaDica: De repente você pode precisar de 2 vetores aqui ;)
+
+ 
+ -->

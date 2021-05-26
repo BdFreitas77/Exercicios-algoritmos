@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino</title>
+</head>
+<body>
+<!-- 
+1) Crie um programa HTML/JS em que o usuário informa seu nome e 
+escolhe numa combo um esporte (Futebol, Vôlei, Basquete ou Tênis).
+
+Ao clicar em um botão "Verificar esporte", caso o nome inserido 
+tenha menos de 8 caracteres (desconsiderando espaços antes e depois 
+do texto - usar o .trim()), exibir um alerta com a mensagem 
+"O nome deve ter pelo menos 8 caracteres". 
+Caso contrário, exibir abaixo do botão:
+
+(Lembrando de desconsiderar espaços antes e depois do texto em 
+todas as operações - usar o .trim())!!! 
+
+a) A quantidade de caracteres do nome
+
+b) O primeiro caractere do nome
+
+c) O último caractere do nome 
+
+d) Uma imagem do esporte selecionado pelo usuário
+
+d2) A largura da imagem deve ser um número aleatório de px, entre 
+50 e a quantidade de caracteres do nome digitado multiplicada por 
+10 (Ex: Everson Olhos tem 13 caracteres, então a largura deve ser 
+entre 50px e 130px (13*10)) 
+
+e) Caso a largura da imagem for até 80px, exibir também, abaixo 
+dela, a mensagem: Imagem pequena!!! 
+
+Se não, caso for até 110px, exibir a mensagem: Imagem meio pequena... 
+
+Se não, caso for até 140px, exibir a mensagem: Imagem média :) 
+
+Se não, caso for até 170px, exibir a mensagem: Imagem meio grande... 
+
+Se não, caso for até 200px, exibir a mensagem: Imagem grande!!! 
+
+Se não, caso for maior que 200px, exibir a mensagem: Seu nome é 
+grande demais criatura
+-->
+
+<center>
+    <br><br><br><br>
+    <h1>Informe seu nome completo e o seu esporte preferido.</h1>
+    <br>
+    <input type="text" placeholder="Seu nome" id="nomee"> 
+    <select name="" id="caixa">
+        <option value="0">Esporte</option>
+        <option value="futebol.jpg">Futebol</option>
+        <option value="volei.jpg">Vôlei</option>
+        <option value="basquete.jpg">Basquete</option>
+        <option value="tenis.jpg">Tênis</option>
+    </select>
+    <br><br>
+    <button onclick="verificar()">Verificar Esporte</button>
+    <br><br>
+    <div id="msg"></div>
+    <br>
+    <div id="imagem"></div>
+    <!-- <img style="width: ;" src="" alt=""> -->
+    <div id="msg_dois"></div>
+</center>
+</body>
+</html>
+<script>
+    function verificar() {
+
+        var nome= nomee.value;
+        nome = nome.trim();
+        var qtd = Number(nome.length);
+        var primeira_letra = nome[0].toUpperCase();
+        var ultima_letra = nome[nome.length-1].toUpperCase();
+        var esporte = caixa.value;
+        var conta = qtd * 10;
+        var gerar = parseInt(Math.random() * ((conta - 50)+1) + 50);
+
+        if (nome.length < 8) {
+            alert ('O nome deve ter pelo menos 8 caracteres');
+        } else {
+            msg.innerHTML = '';
+            msg.innerHTML += `Seu nome possui ${qtd} caracteres.<br>`;
+            msg.innerHTML += `A primeira letra do seu nome é ${primeira_letra}.<br>`;
+            msg.innerHTML += `A última letra do seu nome é ${ultima_letra}.<br>`;
+            imagem.innerHTML = `<img style="width: ${gerar}px;" 
+            src="${esporte}" alt="">`;
+            
+        if (esporte == 0) {
+            msg_dois.innerHTML = `Escolha um Esporte!!`;
+        } else {
+            
+        
+            if (gerar <= 80) {
+            msg_dois.innerHTML= `Esta imagem é pequena!!!`;
+          } else {
+            if (gerar <= 110) {
+                msg_dois.innerHTML= `Esta imagem é meio pequena...`;
+            } else {
+                if (gerar <= 140) {
+                    msg_dois.innerHTML= `Esta imagem é média :)`;
+                } else {
+                    if (gerar <= 170) {
+                        msg_dois.innerHTML= `Esta imagem é meio grande...`;
+                    } else {
+                        if (gerar <= 200) {
+                            msg_dois.innerHTML= `Esta imagem é grande!!!`;
+                        } else {
+                            if (gerar > 200) {
+                                msg_dois.innerHTML= `Seu nome é grande demais criatura!!!!`;
+                            } else {
+                                
+                            }
+                            
+                        }
+                    }
+                }
+            }
+          }
+         }
+        }
+    }
+</script>

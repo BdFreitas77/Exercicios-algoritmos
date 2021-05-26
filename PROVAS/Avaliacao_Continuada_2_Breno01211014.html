@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+</head>
+<body>
+
+<input type="text" id="ipt_nome" placeholder="Insira seu nome"><br>
+<input type="text" id="ipt_idade" placeholder="Insira sua idade"><br>
+
+Qual o esporte?
+
+<select name="" id="esporte">
+    <option value="1">Correr</option>
+    <option value="2">Nadar</option>
+    <option value="3">Pedalar</option>
+</select>
+
+<br>
+
+<button onclick="praticar()">Praticar esporte</button>
+
+<br>
+
+<div id="msg"></div>
+
+<br>
+
+<div id="placar"></div>
+
+<br>
+
+<div id="km_total"></div>
+
+<br>
+
+<div id="imagens"></div>
+
+</body>
+</html>
+<script>
+    // variáveis globais 
+    var km_nadando = Number(0);
+    var km_pedalando = Number(0);
+    var km_correndo = Number(0);
+    var km = Number(1.5);
+    // --
+
+    function praticar() { 
+        // Exercícios B e C
+        if (ipt_nome.value.length < 3 || ipt_idade.value < 18 || ipt_idade.value > 80) {
+            alert ('Dados inválidos!');
+        } else {
+
+            msg.innerHTML= `Atleta: <b>${ipt_nome.value}</b> - Idade: <b>${ipt_idade.value}</b> anos`;
+            if (esporte.value == 1) {
+                km_correndo = km_correndo + km;
+                }
+                if (esporte.value == 2) {
+                    km_nadando = km_nadando + km;
+                    }
+                    if (esporte.value == 3) {
+                        km_pedalando = km_pedalando + km;
+                        }
+        // --
+
+            // criando mais variáveis, para deixar mais organizado (Exercícios D e E)
+            var total = km_correndo + km_nadando+ km_pedalando;
+            var porcentagem_correndo = (km_correndo / total) * 100;
+            var porcentagem_nadando = (km_nadando / total) * 100;
+            var porcentagem_pedalando = (km_pedalando / total) * 100;
+            // --
+
+            // Exercícios D e E
+            placar.innerHTML =`
+            Km correndo: <b>${km_correndo.toFixed(1)}</b> (<b>${porcentagem_correndo.toFixed(2)}</b>%)<br>
+            Km nadando: <b>${km_nadando.toFixed(1)}</b> (<b>${porcentagem_nadando.toFixed(2)}</b>%)<br>
+            Km pedalando: <b>${km_pedalando.toFixed(1)}</b> (<b>${porcentagem_pedalando.toFixed(2)}</b>%)`; 
+            km_total.innerHTML = `Km total= <b>${total.toFixed(1)}</b>`;
+            // --
+
+            // Exercício F
+            imagens.innerHTML = `
+            <img style="width:${(porcentagem_correndo * 300) / 100}px;" src="https://image.flaticon.com/icons/png/128/103/103956.png" alt="">
+            <img style="width:${(porcentagem_nadando * 300) / 100}px;" src="https://image.flaticon.com/icons/png/128/124/124212.png" alt="">
+            <img style="width:${(porcentagem_pedalando * 300) / 100}px;" src="https://image0.flaticon.com/icons/png/128/94/94203.png" alt="">`;
+            // --
+          } 
+    }
+</script>

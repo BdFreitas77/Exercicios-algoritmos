@@ -1,0 +1,37 @@
+input {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-bottom: solid 2px black;
+    outline: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: none;
+    /* text-transform: uppercase; */
+}
+
+span {
+    width: 55px;
+    height: 55px;
+    margin: 0 27.5px;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+section {
+    display: none;
+}
+
+img {
+    height: 250px;
+    display: none;
+}
+
+#msg {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 1000;
+}

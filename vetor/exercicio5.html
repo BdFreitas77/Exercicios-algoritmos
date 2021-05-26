@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+    <br>
+    ENTRE COM O NOME DE UM ALUNO:
+    <br><br>
+    <input type="text" id="nome">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="pesquisar()">Pesquisar aluno</button>
+    <br><br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var alunos = [];
+    var contador = 0;
+
+    function cadastrar() {
+        alunos.push(nome.value)
+        msg.innerHTML += `${nome.value} <br>`;
+    }
+
+    function pesquisar() {
+        contador = alunos.length - 1.
+        var qtd = 0;
+        while (contador >= 0) {
+            if (alunos[contador] == nome.value) {
+                qtd++;
+            }
+            contador--;
+        }
+        if (qtd > 0) {
+            alert(qtd)
+        } else {
+            alert('Aluno não encontrado!')
+        }
+    }
+
+
+</script>
+<!-- 
+a) Tenha um campo para cadastrar alunos em uma lista e um botão "Cadastrar" (mostre como a lista está a cada novo aluno inserido).
+
+b) Tenha um campo e um botão para pesquisar alunos, onde o usuário possa verificar se o aluno em questão já existe - mostre quantas vezes o aluno em questão aparece na lista (pode ser em um alert).
+
+*Obs o campo para pesquisar alunos pode ser o mesmo para inserir novo
+ -->

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <br><br>
+    <input id="nome" type="text" placeholder="Insira o nome de um cachorro">
+    <br><br>
+    <button onclick="registrar()">REGISTRAR</button>
+    <button onclick="validar()">VALIDAR</button>
+    <br><br>
+    <div id="msg"></div>
+    <div id="msg2"></div>
+</body>
+</html>
+<script>
+    var cachorros = [];
+    var contador = 0;
+    var cachorros_invalidos = 0;
+    var span_number = 0;
+    // var span_vetor = []
+
+    function registrar() {
+        cachorros.push(nome.value)
+        msg.innerHTML +=  `<span id= "a${+ span_number}">${nome.value}</span> <br>`;
+        span_number++
+        // span_vetor.push(`a${+ span_number}`)
+    }
+
+    function validar() {
+        contador = 0;
+        cachorros_invalidos = 0;
+        while (contador < cachorros.length) {
+            if (cachorros[contador].length < 2) {
+                cachorros_invalidos++;
+            } 
+            contador++
+        }
+        alert(`Existem ${cachorros_invalidos} cachorros inválidos.`)
+        contador = 0;
+        msg.innerHTML = '';
+        while (contador < cachorros.length) {
+            if (cachorros[contador].length < 2) {
+                msg.innerHTML += `<span style="color: red;">${cachorros[contador]}</span> <br>`
+            } else {
+                msg.innerHTML += `<span>${cachorros[contador]}</span> <br>`
+            }
+            contador++
+        }
+    }
+
+
+</script>
+<!-- 
+15. Crie um programa em HTML/JS o qual:
+a) Solicite o nome de um cachorro
+b) Ao clicar em "Registrar" esse nome vai ficando listado na tela, um abaixo do outro
+c) Deve haver um botão "Validar". Ao ser clicado, ele conta e exibe num alert quantos cachorros são inválidos, ou seja, quantos têm menos de 2 letras
+
+
+16. Melhore o programa anterior de tal forma que, ao clicar no botão "Validar", após o alert, os cachorros inválidos aparecem na cor vermelha da página
+#Ficadica: isso de "mudar de cor" é só um truque. Na verdade o programa apaga todos da tela e depois, quando for colocando um a um, os inválidos coloca na cor vermelha. É tão rápido que o usuário pensa que alguns "mudaram de cor"
+ -->

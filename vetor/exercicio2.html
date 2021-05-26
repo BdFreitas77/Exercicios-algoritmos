@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <br><br>
+    <input type="text" id="local" placeholder="insira um local que você já viajou">
+    <button onclick="cadastrar()">Cadastrar local</button>
+    <br><br>
+    <input id="numero_viajem" type="text" placeholder="insira um numero">
+    <button onclick="relembrar()">Relembrar viajem</button>
+    <br><br>
+    <div id="msg"></div>
+</body>
+</html>
+<!-- 
+Crie um programa onde o usuário vá cadastrando os lugares para onde já viajou. Ele digita o nome do lugar e vai clica em "Cadastrar local".
+Deve haver um outro campo, onde ele digita apenas um número, indicando o local para onde viajou, a partir do número 1 (porque os usuários comuns contam as coisas a partir do 1) e clica em "Relembrar viagem". Se ele informar 1, exiba o primeiro local cadastrado e assim por diante.
+Porém, se ele informar um número maior do que a quantidade de viagens, exiba: "Você não fez uma Xª viagem!"
+ -->
+
+<script>
+    var locais = [];
+    function cadastrar() {
+        locais.push(local.value)
+    }
+
+    function relembrar() {
+        var numero = Number(numero_viajem.value);
+        var numero_verdadeiro = numero - 1;
+        if (numero_verdadeiro <= locais.length) {
+            msg.innerHTML = `${locais[numero_verdadeiro]}`;
+        } else {
+            msg.innerHTML = `Você não fez uma ${numero}ª viagem!`;
+        }
+        
+    }
+</script>

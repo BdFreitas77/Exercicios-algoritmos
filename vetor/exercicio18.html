@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+    <input type="text" id="numeros_l1" placeholder="Entre com números em ordem crescente">
+    <button onclick="lista_um()">Lista1</button>
+    <button onclick="mostrar_l1()">Mostrar L1</button>
+    <br><br>
+    <input type="text" id="numeros_l2" placeholder="Entre com números em ordem crescente">
+    <button onclick="lista_dois()">Lista2</button>
+    <button onclick="mostrar_l2()">Mostrar L2</button>
+    <br><br>
+    <button onclick="juntar()">Juntar</button>
+    <br><br>
+    <div id="msg" style="display: none;"></div>
+    <div id="msg2" style="display: none;"></div>
+    <div id="msg3"></div>
+</body>
+
+</html>
+<script>
+    var lista_1 = [];
+    var lista_2 = [];
+    var lista_1_2 = [];
+    var contador = 0;
+
+    function lista_um() {
+        lista_1.push(numeros_l1.value);
+        lista_1_2.push(numeros_l1.value);
+        msg.innerHTML += `${numeros_l1.value} <br>`;
+    }
+
+    function lista_dois() {
+        lista_2.push(numeros_l2.value);
+        lista_1_2.push(numeros_l2.value)
+        msg2.innerHTML += `${numeros_l2.value} <br>`;
+    }
+
+    function mostrar_l1() {
+        msg.style.display = 'inline-block';
+        msg2.style.display = 'none';
+    }
+
+    function mostrar_l2() {
+        msg.style.display = 'none';
+        msg2.style.display = 'inline-block';
+    }
+
+    function juntar() {
+        contador = 0;
+        while (contador < lista_1_2.length) {
+            
+        }
+    }
+</script>
+<!-- 
+18 - Desafio II) Faça um programa para:
+
+a.       Criar duas listas de números em ordem crescente, sendo:
+
+     -       Tenha um campo para o usuário entrar com um número, garantir que os números sejam colocados em ordem crescente. Quando clicar no botão Lista1, guardar o número em um vetor.
+
+     -        Tenha um outro campo para o usuário entrar com um número, garantir que os números sejam colocados em ordem crescente. Quando clicar no botão Lista2, guardar o número no segundo vertor
+
+b)      Quando clicar no botão Mostar L1, mostrar todos os números do primeiro vetor, um embaixo do outro
+
+c)       Quando clicar no botão Mostar L2, mostrar todos os números do segundo vetor,  um embaixo do outro
+
+d)      Quando clicar no botão Juntar, mostrar todos os números dos dois vetores um embaixo do outro e em ordem crescente.
+
+
+ -->

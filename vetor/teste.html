@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="id">
+    <button onclick="funcao()">Cadastrar</button>
+</body>
+</html>
+<script>
+    var teste = [];
+    var contador = 0;
+    var qtd = 0;
+    function funcao() {
+        contador = 0;
+        qtd = 0;
+        while (contador < teste.length) {
+            if (id.value == teste[contador]) {
+                qtd++
+            }
+            contador++
+        }
+        if (qtd > 0) {
+            alert('Algo já foi cadastrado com esse nome!')
+        } else {
+            teste.push(id.value);
+        }
+    }
+</script>

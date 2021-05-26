@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="in_nova_fruta" placeholder="insira uma fruta">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <input type="text" id="in_pesquisa" placeholder="qual fruta quer achar?">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <br><br>
+    <div id="resposta"></div>
+    </html>
+</body>
+
+<script>
+    var frutas = []; // Isso é um vetor chamado frutas.
+
+    function cadastrar() {
+        // var nova_fruta = in_nova_fruta.value;
+        frutas.push(in_nova_fruta.value); // push insere valores no vetor.
+    }
+
+    function pesquisar() {
+        var pesquisa = Number(in_pesquisa.value);
+        pesquisa = pesquisa - 1;
+
+        if (pesquisa <= frutas.lenght) {
+            var fruta_encontrada = frutas[pesquisa]
+            resposta.innerHTML = `A ${pesquisa + 1} fruta cadastrada foi: ${fruta_encontrada}`;
+        } else {
+            resposta.innerHTML = `Não existe uma ${pesquisa + 1} fruta cadastrada`
+        }
+    }
+</script>

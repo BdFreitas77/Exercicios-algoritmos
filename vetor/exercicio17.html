@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio17.css">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+    <br><br>
+    <h1>JOGO DA FORCA!</h1>
+    <br><br>
+    <img id="cabeca" src="cabeca.png" alt="">
+    <img id="tronco" src="tronco.png" alt="">
+    <img id="bdireito" src="bdireito.png" alt="">
+    <img id="besquerdo" src="besquerdo.png" alt="">
+    <img id="pesquerda" src="pesquerda.png" alt="">
+    <img id="pdireita" src="pdireita.png" alt="">
+    <img id="feliz" src="feliz.png" alt="">
+    <img style="display: inline-block;" id="forca" src="forca.png" alt="">
+    <br><br>
+    <div id="msg"></div>
+    <br><br><br>
+    <section id="filme_1">
+        <input type="text" id="ipt1" maxlength="1">
+        <input type="text" id="ipt2" maxlength="1">
+        <input type="text" id="ipt3" maxlength="1">
+        <input type="text" id="ipt4" maxlength="1">
+        <input type="text" id="ipt5" maxlength="1">
+        <input type="text" id="ipt6" maxlength="1">
+        <input type="text" id="ipt7" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt8" maxlength="1">
+        <input type="text" id="ipt9" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt10" maxlength="1">
+        <input type="text" id="ipt11" maxlength="1">
+        <input type="text" id="ipt12" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt13" maxlength="1">
+        <input type="text" id="ipt14" maxlength="1">
+        <input type="text" id="ipt15" maxlength="1">
+        <input type="text" id="ipt16" maxlength="1">
+        <input type="text" id="ipt17" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt18" maxlength="1">
+        <input type="text" id="ipt19" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt20" maxlength="1">
+        <input type="text" id="ipt21" maxlength="1">
+        <input type="text" id="ipt22" maxlength="1">
+        <input type="text" id="ipt23" maxlength="1">
+        <input type="text" id="ipt24" maxlength="1">
+        <input type="text" id="ipt25" maxlength="1">
+        <br><br>
+        <h3>Dica: Na França do século 18, Marianne é uma jovem pintora contratada para fazer um retrato de Héloïse, sem
+            que ela saiba.</h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+    <section id="filme_2">
+        <input type="text" id="ipt26" maxlength="1">
+        <input type="text" id="ipt27" maxlength="1">
+        <input type="text" id="ipt28" maxlength="1">
+        <input type="text" id="ipt29" maxlength="1">
+        <input type="text" id="ipt30" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt31" maxlength="1">
+        <input type="text" id="ipt32" maxlength="1">
+        <input type="text" id="ipt33" maxlength="1">
+        <input type="text" id="ipt34" maxlength="1">
+        <input type="text" id="ipt35" maxlength="1">
+        <input type="text" id="ipt36" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt37" maxlength="1">
+        <input type="text" id="ipt38" maxlength="1">
+        <input type="text" id="ipt39" maxlength="1">
+        <input type="text" id="ipt40" maxlength="1">
+        <input type="text" id="ipt41" maxlength="1">
+        <input type="text" id="ipt42" maxlength="1">
+        <input type="text" id="ipt43" maxlength="1">
+        <input type="text" id="ipt44" maxlength="1">
+        <input type="text" id="ipt45" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt46" maxlength="1">
+        <input type="text" id="ipt47" maxlength="1">
+        <input type="text" id="ipt48" maxlength="1">
+        <input type="text" id="ipt49" maxlength="1">
+        <input type="text" id="ipt50" maxlength="1">
+        <input type="text" id="ipt51" maxlength="1">
+        <br><br>
+        <h3>Dica: Autumn é uma adolescente de 17 anos que vive na zona rural da Pensilvânia. Ao descobrir que está
+            grávida, ela se desespera e tenta induzir um aborto. Como a tentativa falha, ela pede ajuda à Skylar, sua
+            prima e melhor amiga.</h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+    <section id="filme_3">
+        <input type="text" id="ipt52" maxlength="1">
+        <input type="text" id="ipt53" maxlength="1">
+        <input type="text" id="ipt54" maxlength="1">
+        <input type="text" id="ipt55" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt56" maxlength="1">
+        <input type="text" id="ipt57" maxlength="1">
+        <input type="text" id="ipt58" maxlength="1">
+        <input type="text" id="ipt59" maxlength="1">
+        <input type="text" id="ipt60" maxlength="1">
+        <input type="text" id="ipt61" maxlength="1">
+        <input type="text" id="ipt62" maxlength="1">
+        <br><br>
+        <h3>Dica: No dia 9 de novembro, Nyles acorda e se arruma para ir ao casamento de um casal de amigos. Na festa,
+            ele começa a conversar com Sarah. Nyles e Sarah, então, passam a noite juntos. Na manhã seguinte, os dois
+            percebem que estão revivendo novamente o dia 9 de novembro e assim repetidamente.</h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+    <section id="filme_4">
+        <input type="text" id="ipt63" maxlength="1">
+        <input type="text" id="ipt64" maxlength="1">
+        <input type="text" id="ipt65" maxlength="1">
+        <input type="text" id="ipt66" maxlength="1">
+        <input type="text" id="ipt67" maxlength="1">
+        <input type="text" id="ipt68" maxlength="1">
+        <input type="text" id="ipt69" maxlength="1">
+        <input type="text" id="ipt70" maxlength="1">
+        <input type="text" id="ipt71" maxlength="1">
+        <input type="text" id="ipt72" maxlength="1">
+        <input type="text" id="ipt73" maxlength="1">
+        <input type="text" id="ipt74" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt75" maxlength="1">
+        <input type="text" id="ipt76" maxlength="1">
+        <input type="text" id="ipt77" maxlength="1">
+        <input type="text" id="ipt78" maxlength="1">
+        <input type="text" id="ipt79" maxlength="1">
+        <br><br>
+        <h3>Dica: O filme conta a história de três amigos negros que lutaram na Guerra do Vietnã: Otis, Eddie e Melvin.
+        </h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+    <section id="filme_5">
+        <input type="text" id="ipt80" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt81" maxlength="1">
+        <input type="text" id="ipt82" maxlength="1">
+        <input type="text" id="ipt83" maxlength="1">
+        <input type="text" id="ipt84" maxlength="1">
+        <input type="text" id="ipt85" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt86" maxlength="1">
+        <input type="text" id="ipt87" maxlength="1">
+        <input type="text" id="ipt88" maxlength="1">
+        <input type="text" id="ipt89" maxlength="1">
+        <input type="text" id="ipt90" maxlength="1">
+        <input type="text" id="ipt91" maxlength="1">
+        <input type="text" id="ipt92" maxlength="1">
+        <input type="text" id="ipt93" maxlength="1">
+        <input type="text" id="ipt94" maxlength="1">
+        <br><br>
+        <h3>Dica: Vítima de violência doméstica, Cecilia foge de casa e abandona o marido, um cientista conhecido por
+            ser um gênio da física. Algum tempo depois, ele comete suicídio, deixando uma fortuna para Cecilia.</h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+    <section id="filme_6">
+        <input type="text" id="ipt95" maxlength="1">
+        <input type="text" id="ipt96" maxlength="1">
+        <input type="text" id="ipt97" maxlength="1">
+        <input type="text" id="ipt98" maxlength="1">
+        <input type="text" id="ipt99" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt100" maxlength="1">
+        <input type="text" id="ipt101" maxlength="1">
+        <input type="text" id="ipt102" maxlength="1">
+        <input type="text" id="ipt103" maxlength="1">
+        <input type="text" id="ipt104" maxlength="1">
+        <input type="text" id="ipt105" maxlength="1">
+        <br><br>
+        <h3>Dica: Na manhã de seu aniversário de 16 anos, Enola Holmes descobre que sua mãe desapareceu sem deixar
+            nenhuma pista.</h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+    <section id="filme_7">
+        <input type="text" id="ipt106" maxlength="1">
+        <input type="text" id="ipt107" maxlength="1">
+        <input type="text" id="ipt108" maxlength="1">
+        <input type="text" id="ipt109" maxlength="1">
+        <input type="text" id="ipt110" maxlength="1">
+        <input type="text" id="ipt111" maxlength="1">
+        <input type="text" id="ipt112" maxlength="1">
+        <input type="text" id="ipt113" maxlength="1">
+        <br><br>
+        <h3>Dica: Menininho que morreu, mas depois seu pai construiu sua versão robô.</h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+    <section id="filme_8">
+        <input type="text" id="ipt114" maxlength="1">
+        <input type="text" id="ipt115" maxlength="1">
+        <input type="text" id="ipt116" maxlength="1">
+        <input type="text" id="ipt117" maxlength="1">
+        <br><br>
+        <h3>Dica:Emma Woodhouse é uma jovem linda, rica e inteligente. Para continuar cuidando do pai viúvo, ela diz que
+            não pretende se casar, mas gosta de agir como casamenteira, juntando os solteiros da região.</h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+    <section id="filme_9">
+        <input type="text" id="ipt118" maxlength="1">
+        <input type="text" id="ipt119" maxlength="1">
+        <input type="text" id="ipt120" maxlength="1">
+        <input type="text" id="ipt121" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt122" maxlength="1">
+        <input type="text" id="ipt123" maxlength="1">
+        <input type="text" id="ipt124" maxlength="1">
+        <input type="text" id="ipt125" maxlength="1">
+        <input type="text" id="ipt126" maxlength="1">
+        <input type="text" id="ipt127" maxlength="1">
+        <br><br>
+        <h3>Dica: Barley e Ian são dois irmãos elfos que vivem em um mundo cheio de criaturas mágicas, só que todos
+            substituíram a magia pelo uso da tecnologia.</h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+    <section id="filme_10">
+        <input type="text" id="ipt128" maxlength="1">
+        <input type="text" id="ipt129" maxlength="1">
+        <input type="text" id="ipt130" maxlength="1">
+        <span></span>
+        <input type="text" id="ipt131" maxlength="1">
+        <input type="text" id="ipt132" maxlength="1">
+        <input type="text" id="ipt133" maxlength="1">
+        <input type="text" id="ipt134" maxlength="1">
+        <input type="text" id="ipt135" maxlength="1">
+        <input type="text" id="ipt136" maxlength="1">
+        <input type="text" id="ipt137" maxlength="1">
+        <br><br>
+        <h3>Dica: Turquoise é uma mulher negra que luta para criar sozinha a filha, Kai, no interior do Texas. Ela está
+            treinando Kai para participar do concurso Miss Juneteenth, do qual ela foi a vencedora anos atrás.</h3>
+        <br><br>
+        <button onclick="validar_filme()">JOGAR</button>
+        <button onclick="reload()">NOVO JOGO</button>
+    </section>
+</body>
+
+</html>
+<!-- 17. (super desafio) Reproduza o clássico "Jogo da Forca":
+a) Seu jogo deve ter um conjunto de 10 nomes de filmes (não são cadastrados, já estão lá no seu código, em algum lugar que o usuário não vê)
+
+b) Ao iniciar, o jogo sorteia um dos nomes de filmes e monta a "Forca" na qual cada espaço da letra é um input com 50px de largura, todos lado a lado. Caso exista mais de 1 palavra no nome, haverão espaços em branco entre elas, certo? Nesse caso, ao invés de input deve haver um span de 55px de largura em cada espaço em branco do nome do filme.
+
+c) Abaixo de todos os inputs (e spans, caso existam) deve haver uma dica muito boa sobre o filme (sim, devem haver, portanto, 10 dicas no programa também, uma para cada filme)
+
+d) Abaixo da dica, deve haver um botão "Jogar". Ele valida todos os inputs preenchidos, para saber quantos e quais foram preenchidos com a letra certa para cada posição. Nos inputs com a letra certa a cor fica azul e nos errados com a cor vermelha
+
+e) Cada vez que o usuário clica em "Jogar", caso o usuário não acerte todos as letras, o boneco dele vai aparecendo aos poucos. Como é isso? Sempre que não acertar tudo, aparece uma parte do boneco e vai se "juntando" a anterior, nessa sequência:
+- Perna direita
+- Perna esquerda
+- Tronco
+- Braço direito
+- Braço esquerdo
+- Cabeça
+
+f) Se o boneco ficar completo, ou seja, com todas as partes do corpo, o usuário "morre enforcado". Portanto, o usuário tem 5 chances para acertar o nome do filme antes de "morrer". Se o usuário falhar 6 vezes, exiba a frase "Morreu enforcado" abaixo do "boneco".
+
+g) Se o usuário acertar o nome do filme em até 5 tentativas, a imagem do boneco (que estará incompleta, claro) some e exiba, em seu lugar, uma imagem de uma pessoa "aliviada" ou "feliz" -->
+<script>
+    var filme_sorteado = parseInt(Math.random() * 10);
+
+    function selecionar_forca() {
+        // if (filme_sorteado == 0) {
+        //     filme_1.style.display = 'block';
+        // } else if (filme_sorteado == 1) {
+        //     filme_2.style.display = 'block';
+        // } else if (filme_sorteado == 2) {
+        //     filme_3.style.display = 'block';
+        // } else if (filme_sorteado == 3) {
+        //     filme_4.style.display = 'block';
+        // } else if (filme_sorteado == 4) {
+        //     filme_5.style.display = 'block';
+        // } else if (filme_sorteado == 5) {
+        //     filme_6.style.display = 'block';
+        // } else if (filme_sorteado == 6) {
+        //     filme_7.style.display = 'block';
+        // } else if (filme_sorteado == 7) {
+        //     filme_8.style.display = 'block';
+        // } else if (filme_sorteado == 8) {
+        //     filme_9.style.display = 'block';
+        // } else if (filme_sorteado == 9) {
+        //     filme_10.style.display = 'block';
+        // }
+        var aparecer = document.getElementById(`filme_${filme_sorteado + 1}`)
+        aparecer.style.display = 'block';
+    }
+    selecionar_forca();
+
+    var filmes = [];
+    filmes.push('RetratodeUmaJovememChamas', 'NeverRarelySometimesAlways', 'PalmSprings', 'DestacamentoBlood',
+        'OHomemInvisivel', 'EnolaHolmes', 'Astroboy', 'Emma', 'DoisIrmaos', 'Semremorso');
+
+    // var filme_um = [];
+    // filme_um.push(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27)
+    // var teste = 'oie';
+    var contador = 0;
+    var contador2 = 0;
+    var contador3 = 0;
+    var input_selecionado = document.getElementById(`ipt${contador + 1}`)
+    var filme_contador = filmes[filme_sorteado];
+
+    function arrumar_contador() {
+        if (filme_sorteado == 0) {
+            contador2 = 1;
+        } else if (filme_sorteado == 1) {
+            contador2 = 26
+        } else if (filme_sorteado == 2) {
+            contador2 = 52
+        } else if (filme_sorteado == 3) {
+            contador2 = 63
+        } else if (filme_sorteado == 4) {
+            contador2 = 80
+        } else if (filme_sorteado == 5) {
+            contador2 = 95
+        } else if (filme_sorteado == 6) {
+            contador2 = 106
+        } else if (filme_sorteado == 7) {
+            contador2 = 114
+        } else if (filme_sorteado == 8) {
+            contador2 = 118
+        } else if (filme_sorteado == 9) {
+            contador2 = 128
+        }
+        contador = 0;
+    }
+
+    function validar_filme() {
+        forca.style.display = 'none';
+        arrumar_contador();
+        while (contador <= filme_contador.length) {
+            filme_contador = filmes[filme_sorteado];
+            input_selecionado = document.getElementById(`ipt${contador2}`)
+            filme_contador[contador] == input_selecionado.value ? input_selecionado.style.backgroundColor = "blue" :
+                input_selecionado.style.backgroundColor = "red";
+            contador++;
+            contador2++;
+        }
+        arrumar_contador();
+        while (contador < filme_contador.length) {
+            input_selecionado = document.getElementById(`ipt${contador2}`)
+            if (input_selecionado.style.backgroundColor == 'red') {
+                contador++;
+                contador2++;
+                contador3++;
+                if (contador3 == 1) {
+                    cabeca.style.display = 'inline-block';
+                    feliz.style.display = 'none';
+                } else if (contador3 == 2) {
+                    cabeca.style.display = 'none';
+                    tronco.style.display = 'inline-block';
+                    feliz.style.display = 'none';
+                } else if (contador3 == 3) {
+                    cabeca.style.display = 'none';
+                    tronco.style.display = 'none';
+                    bdireito.style.display = 'inline-block';
+                    feliz.style.display = 'none';
+                } else if (contador3 == 4) {
+                    cabeca.style.display = 'none';
+                    tronco.style.display = 'none';
+                    bdireito.style.display = 'none';
+                    besquerdo.style.display = 'inline-block';
+                    feliz.style.display = 'none';
+                } else if (contador3 == 5) {
+                    cabeca.style.display = 'none';
+                    tronco.style.display = 'none';
+                    bdireito.style.display = 'none';
+                    besquerdo.style.display = 'none';
+                    pesquerda.style.display = 'inline-block';
+                    feliz.style.display = 'none';
+                } else if (contador3 == 6) {
+                    cabeca.style.display = 'none';
+                    tronco.style.display = 'none';
+                    bdireito.style.display = 'none';
+                    besquerdo.style.display = 'none';
+                    pesquerda.style.display = 'none';
+                    pdireita.style.display = 'inline-block';
+                    feliz.style.display = 'none';
+                    msg.style.color = 'red'
+                    msg.innerHTML = 'Morreu enforcado';
+                }
+                break;
+            } else if (contador3 == 6) {
+                break;
+            } if (contador3 <= 5) {
+                cabeca.style.display = 'none';
+                tronco.style.display = 'none';
+                bdireito.style.display = 'none';
+                besquerdo.style.display = 'none';
+                pesquerda.style.display = 'none';
+                forca.style.display = 'none';
+                feliz.style.display = 'inline-block';
+                msg.style.color = 'blue'
+                contador++;
+                contador2++;
+                // break
+            }
+
+        }
+    }
+
+    function reload() {
+        document.location.reload(true)
+    }
+</script>
